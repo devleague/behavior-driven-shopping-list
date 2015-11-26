@@ -1,0 +1,26 @@
+{
+  "name": "behavior-driven-shopping-list",
+  "version": "1.0.0",
+  "description": "Adds stuff to a shopping list.",
+  "main": "app.js",
+  "dependencies": {
+    "chai": "^3.4.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleong14/Behavior-Driven-Shopping-List.git"
+  },
+  "author": "Chaz Leong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleong14/Behavior-Driven-Shopping-List/issues"
+  },
+  "homepage": "https://github.com/cleong14/Behavior-Driven-Shopping-List#readme"
+}
