@@ -185,7 +185,6 @@ if the checkbox is checked,
  invoke the shopping_list_item object's `check()` method.
 if the checkbox is not checked,  
  invoke the shopping_list_item object's `uncheck()` method.
-then, re-render the shopping list.
 
 commit and push your work.
 
@@ -198,9 +197,8 @@ Modify the ShoppingListItem `render()` method to include a `button` element with
 
 #### removeItemButtonClicked()
 
-create a `removeItemButtonClicked` function that accepts a single argument, idx.  
-it will find a ShoppingListItem based on the idx passed in to the function.  
-it will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument.
-then, re-render the shopping list.  
+Create a `removeItemButtonClicked` function that accepts a single argument, idx.  
+It will find a ShoppingListItem based on the idx passed in to the function.  
+It will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument. Then, re-render the shopping list.  
 
 commit and push your work.
