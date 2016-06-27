@@ -42,7 +42,7 @@ The tests should describe the following shopping list functionality:
 - ShoppingListItem has a method named `uncheck`
   -  calling the instance's `uncheck` method will set it's `is_done` property to false
 - ShoppingListItem has a method named `render`
-  -  calling the instance's `render` method will construct and return an html formatted string. the string content will be wrapped in "<li>" tags.  `<li class="completed_[is_done]"><span>[name]</span> <span>[description]</span></li>`.   example: `<li class="completed_false"><span>Avocado</span> <span>Must be eaten immediately.</span></li>`
+  -  calling the instance's `render` method will construct and return an html formatted string. the string content will be wrapped in `<li>` tags.  `<li class="completed_[is_done]"><span>[name]</span> <span>[description]</span></li>`.   example: `<li class="completed_false"><span>Avocado</span> <span>Must be eaten immediately.</span></li>`
 
 hint: Use ES6 [string templates](http://tc39wiki.calculist.org/es6/template-strings/) for your render method
 
@@ -72,15 +72,13 @@ var some_html_output = '<ul> \
   - invoking the `removeItem` method with no parameters should remove the last item in the `items` list, if there are any items, else it does nothing
   - invoking the `removeItem` method by passing in anything else that is not a ShoppingListItem object (that exists in the `items` array) should immediately throw an error
 - ShoppingList has a method named `render`
-  - calling the instance's `render` method will concatenate the result of calling `render()` on each item in this object's `items` array, wrapping it in a "<ul>" tags, and returning an html formatted string. ex: `<ul>...[all the li elements from ShoppingListItem.render()]...</ul>`
+  - calling the instance's `render` method will concatenate the result of calling `render()` on each item in this object's `items` array, wrapping it in a `<ul>` tags, and returning an html formatted string. ex: `<ul>...[all the li elements from ShoppingListItem.render()]...</ul>`
 
 
 ### test.html
 
-standard html5 document
-before the end of this body tag, include your test library dependencies and your test file.
-
-you should be able to run your tests with all tests failing, commit and push your work.
+Standard html5 document
+Before the end of this body tag, include your test library dependencies and your test file. You should be able to run your tests with all tests failing, commit and push your work.
 
 
 ## 2. Building the Shopping List classes to make tests pass
@@ -103,8 +101,8 @@ Shopping-List/
 
 ### index.html
 
-standard html5 document
-before the end of this body tag, include your 2 shopping list scripts.
+Standard html5 document
+Before the end of this body tag, include your 2 shopping list scripts.
 
 
 ### shopping_list_item.js  
@@ -119,7 +117,7 @@ Create a class that defines `ShoppingList`.
 `ShoppingList` will have all the properties and methods defined in the BDD spec above.
 
 
-once all tests pass, commit and push.
+Once all tests pass, commit and push.
 
 
 ## 3. Rendering a shopping list to the browser
@@ -167,7 +165,7 @@ Invoke your shopping list's `addItem` by passing in your `new_shopping_list_item
 
 Re-render the shopping list.
 
-commit and push your work
+Commit and push your work
 
 ## 4. Check and Uncheck shopping list items
 
@@ -186,7 +184,7 @@ if the checkbox is checked,
 if the checkbox is not checked,  
  invoke the shopping_list_item object's `uncheck()` method.
 
-commit and push your work.
+Commit and push your work.
 
 
 ## 5. Remove shopping list items
@@ -201,4 +199,4 @@ Create a `removeItemButtonClicked` function that accepts a single argument, idx.
 It will find a ShoppingListItem based on the idx passed in to the function.  
 It will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument. Then, re-render the shopping list.  
 
-commit and push your work.
+Commit and push your work.
