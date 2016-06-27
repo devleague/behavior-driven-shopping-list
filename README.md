@@ -44,7 +44,7 @@ The tests should describe the following shopping list functionality:
 - ShoppingListItem has a method named `render`
   -  calling the instance's `render` method will construct and return an html formatted string. the string content will be wrapped in "<li>" tags.  `<li class="completed_[is_done]"><span>[name]</span> <span>[description]</span></li>`.   example: `<li class="completed_false"><span>Avocado</span> <span>Must be eaten immediately.</span></li>`
 
-hint: multiline strings in javascript need to be "escaped"
+hint: Use ES6 [string templates](http://tc39wiki.calculist.org/es6/template-strings/) for your render method
 
 example:
 
