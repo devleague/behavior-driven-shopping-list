@@ -200,3 +200,10 @@ It will find a ShoppingListItem based on the idx passed in to the function.
 It will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument. Then, re-render the shopping list.  
 
 Commit and push your work.
+
+## Stretch Goals
+When you finish all of the items above, you can work on these additonal stretch goals.
+
+* Ask a TA or instructor for a code review.
+* When you check an item off on your shopping list, strike it out on the DOM.
+* Make it look like a shopping list app that you would want to use. Great creative with the UI and UX.
