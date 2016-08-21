@@ -3,7 +3,7 @@
 Fork and clone this project.  
 Goal: Create a working, single page app.  
 
-This project has 3 parts.
+
 
 1. The Shopping List BDD tests
 2. Building the Shopping List classes to make tests pass

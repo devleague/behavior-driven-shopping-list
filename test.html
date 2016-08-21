@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shopping List</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">	
+</head>
+<body>
+	<div id="mocha"></div>
+
+<!-- Require my files -->
+	<script type="text/javascript" src="js/shopping-list.js"></script>
+	<script type="text/javascript" src="js/shopping-list-item.js"></script>
+	<script type="text/javascript" src="node_modules/chai/chai.js"></script>
+	<script type="text/javascript" src="node_modules/mocha/mocha.js"></script>
+	<script>mocha.setup('bdd');</script>
+	<script type="text/javascript" src="test/shopping-list-item.spec.js"></script>
+	<script type="text/javascript" src="test/shopping-list.spec.js"></script>
+	<script>mocha.run();</script>
+</body>
+</html>
