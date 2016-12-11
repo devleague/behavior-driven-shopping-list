@@ -1,0 +1,23 @@
+{
+  "name": "behavior-driven-shopping-list",
+  "version": "1.0.0",
+  "description": "Fork and clone this project.   Goal: Create a working, single page app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOtaJ/behavior-driven-shopping-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MOtaJ/behavior-driven-shopping-list/issues"
+  },
+  "homepage": "https://github.com/MOtaJ/behavior-driven-shopping-list#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
