@@ -46,7 +46,7 @@ describe ('ShoppingListItem', () => {
   it('method "render" should return an HTML string', () => {
    render.should.be.a.function
    pizza.render();
-   render.should.have.property('string')
+   render.should.have.property('string');
   })
 
 
