@@ -115,6 +115,12 @@ describe('ShoppingList', () => {
 
   it('render should be a function', () => {
 
+
+  it('method "render" should return an HTML string', () => {
+   render.should.be.a.function
+   pizza.render();
+   render.should.have.property('string');
+
   })
 })
 

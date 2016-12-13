@@ -13,7 +13,7 @@ class ShoppingListItem {
   }
 
   render() {
-    return 'li class ='
+    return 'li class =" completed_[is_done]" <span>[name]</span> <span>[description]</span></li>';
   }
 }
 
