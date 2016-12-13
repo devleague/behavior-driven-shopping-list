@@ -84,37 +84,38 @@ describe ('ShoppingListItem', () => {
 
 describe('ShoppingList', () => {
 
-  let sl;
-
-  beforeEach(() => {
-    sl = new ShoppingList('items');
-  })
-
   it('should be a class', () => {
-    sl.should.be.a.function
+    ShoppingList.should.be.a.function
   })
 
   it('should have property named "items"', () => {
-    sl.should.have.property('items')
+    ShoppingList.should.have.property('items')
   })
 
   it('should have constructor method that takes "items" as an array', () => {
-    sl.items.should.deep.equal('[]')
+    ShoppingList.items.should.deep.equal('[]')
   })
 
-describe('addItem', () => {
-
-  let sl;
-
-  beforeEach(() => {
-    sl = new ShoppingList('items');
-  })
+  describe('addItem', () => {
 
   it('should add an object to the "items" array', () => {
-    sl.should.be.a.function
-    sl.should.accep
+    ShoppingList.should.be.a.function
   })
 
+})
+
+  describe('removeItem', () => {
+
+  it('remove item should be a function', () => {
+
+  })
+})
+
+  describe('render', () => {
+
+  it('render should be a function', () => {
+
+  })
 })
 
 
