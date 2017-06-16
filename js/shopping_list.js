@@ -21,7 +21,6 @@ class ShoppingList {
     } else if (item === undefined) {
       this.items.pop();
     }
-
   }
 
 

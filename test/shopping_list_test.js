@@ -43,7 +43,7 @@ describe("ShoppingListItem Class", function(){
 
   describe("render method", function(){
     it("should have method render", function(){
-      expect(cake.render()).to.equal(`$<li>`)
+      expect(cake.render()).to.equal(`<li class=completed_${cake.is_done}><span>${cake.name}</span> <span>${cake.description}</span></li>`);
     })
   })
 
