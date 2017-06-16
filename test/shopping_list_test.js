@@ -52,10 +52,12 @@ describe("ShoppingListItem Class", function(){
 describe("ShoppingList Class", function(){
   var shoppingList = ShoppingList;
   var myList;
+  var steak = new ShoppingListItem("Ribeye");
+  var eggs = new ShoppingListItem("Egg Whites");
 
 
   beforeEach(function(){
-    myList = new ShoppingList("myList");
+    myList = new ShoppingList();
   })
 
   it("should be a function", function(){
@@ -66,19 +68,45 @@ describe("ShoppingList Class", function(){
     expect(myList.items).to.deep.equal([]);
   })
 
-  describe("addItem method", function(){
-    it("should have method addItem", function(){
-      myList.addItem.should.be.a("function");
-      myList.addItem("cake");
-      expect(myList.items).to.deep.equal(["cake"]);
+  describe("addItem method", function (){
+    it("should have a method addItem and has a single ShoppingListItem argument", function(){
+      expect(myList.addItem).to.be.a("function")
+    })
+
+    it("should have a instance of ShoppingListItem", function(){
+      myList.addItem(steak);
+      expect(steak instanceof ShoppingListItem).to.equal(true);
+    })
+
+    it("should throw error if item is not an instanceof ShoppingListItem", function (){
+      expect(myList.addItem).to.throw("This item is not on shopping list");
+    })
+
+  describe("removeItem method", function(){
+    it("should have a method removeItem and has a single ShoppingListItem argument", function(){
+      expect(myList.removeItem).to.be.a("function")
+    })
+
+    it("should remove the object from the ShoppingList", function(){
+      myList.addItem(steak)
+      myList.removeItem(steak)
+      expect(myList.items).to.not.include(steak)
+    })
+
+    it("should remove the last item if no argument is passed", function(){
+      myList.addItem(steak);
+      myList.addItem(eggs);
+      myList.removeItem();
+      myList.items.should.not.contain(eggs);
     })
   })
 
-  describe("removeItem", function(){
-    it("should have method removeItem", function(){
-      myList.removeItem.should.be.a("function");
-    })
-  })
+
+
+
+})
+
+
 
 
 
