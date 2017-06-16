@@ -47,6 +47,7 @@ describe("ShoppingListItem Class", function(){
 describe("ShoppingList Class", function(){
   var shoppingList = ShoppingList;
   var myList;
+  var shoppingListItem;
 
   beforeEach(function(){
     myList = new ShoppingList("myList");
@@ -57,10 +58,13 @@ describe("ShoppingList Class", function(){
   })
 
   it("should have a property items", function(){
-    expect(Array.myList.items);
+    expect(myList.items).to.deep.equal([]);
   })
 
-
+  it("should have method addItem", function(){
+    myList.addItem("cake");
+    expect(myList.items).to.deep.equal(["cake"]);
+  })
 
 
 

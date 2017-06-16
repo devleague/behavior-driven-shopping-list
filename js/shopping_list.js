@@ -1,6 +1,9 @@
 class ShoppingList {
   constructor(items) {
-    this.items = items;
+    this.items = [];
+  }
 
+  addItem (shoppingListItem) {
+    this.items.push(shoppingListItem);
   }
 }
