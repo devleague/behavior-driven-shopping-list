@@ -1,9 +1,16 @@
 class ShoppingList {
-  constructor(items) {
+  constructor() {
     this.items = [];
   }
 
   addItem (shoppingListItem) {
-    this.items.push(shoppingListItem);
+    if(shoppingListItem){
+      this.items.push(shoppingListItem);
+    } else {
+      throw Error("Item is not on shopping list");
+    }
   }
+
+
+
 }

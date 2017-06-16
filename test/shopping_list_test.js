@@ -47,7 +47,7 @@ describe("ShoppingListItem Class", function(){
 describe("ShoppingList Class", function(){
   var shoppingList = ShoppingList;
   var myList;
-  var shoppingListItem;
+
 
   beforeEach(function(){
     myList = new ShoppingList("myList");
@@ -65,7 +65,6 @@ describe("ShoppingList Class", function(){
     myList.addItem("cake");
     expect(myList.items).to.deep.equal(["cake"]);
   })
-
 
 
 
