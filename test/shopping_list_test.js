@@ -28,19 +28,24 @@ describe("ShoppingListItem Class", function(){
     expect(cake.is_done).to.equal(true);
   })
 
-  it("should have method check", function(){
-    //expect(cake.check).to.be.a("function");
-    expect(cake.check()).to.equal(true);
+  describe("check method", function(){
+    it("should have method check", function(){
+      //expect(cake.check).to.be.a("function");
+      expect(cake.check()).to.equal(true);
+    })
   })
 
-  it("should have method uncheck", function(){
-    expect(cake.uncheck()).to.equal(false);
+  describe("uncheck method", function(){
+    it("should have method uncheck", function(){
+      expect(cake.uncheck()).to.equal(false);
+    })
   })
 
-  it("should have method render", function(){
-    expect(cake.render()).to.equal(`$<li>`)
+  describe("render method", function(){
+    it("should have method render", function(){
+      expect(cake.render()).to.equal(`$<li>`)
+    })
   })
-
 
 })
 
@@ -61,10 +66,20 @@ describe("ShoppingList Class", function(){
     expect(myList.items).to.deep.equal([]);
   })
 
-  it("should have method addItem", function(){
-    myList.addItem("cake");
-    expect(myList.items).to.deep.equal(["cake"]);
+  describe("addItem method", function(){
+    it("should have method addItem", function(){
+      myList.addItem.should.be.a("function");
+      myList.addItem("cake");
+      expect(myList.items).to.deep.equal(["cake"]);
+    })
   })
+
+  describe("removeItem", function(){
+    it("should have method removeItem", function(){
+      myList.removeItem.should.be.a("function");
+    })
+  })
+
 
 
 

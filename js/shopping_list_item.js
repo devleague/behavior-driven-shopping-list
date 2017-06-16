@@ -7,15 +7,15 @@ class ShoppingListItem {
 
   }
 
-  check() {
+  check () {
     return this.is_done;
   }
 
-  uncheck() {
+  uncheck () {
     return this.is_done = false;
   }
 
-  render() {
+  render () {
     return `$<li>`;
   }
 

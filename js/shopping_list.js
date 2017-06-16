@@ -3,12 +3,16 @@ class ShoppingList {
     this.items = [];
   }
 
-  addItem (shoppingListItem) {
-    if(shoppingListItem){
-      this.items.push(shoppingListItem);
+  addItem (item) {
+    if(item) {
+      this.items.push(item);
     } else {
       throw Error("Item is not on shopping list");
     }
+  }
+
+  removeItem (item) {
+
   }
 
 
