@@ -3,27 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="mocha"></div>
+  <form  id="form" action=''>
+    Item Name:
+    <input id="itemName" type="text" placeholder="item name">
+    Item Description:
+    <input id="itemDescription" type="text" placeholder="description">
+  </form>
+  <div id="addContainer"></div>
 
-  <script src="/js/shopping_list_item.js" charset="ufc-8"></script>
+  <div id="content"></div>
 
-  <script src="/js/shopping_list.js" charset="ufc-8"></script>
-
-  <script src="node_modules/mocha/mocha.js" charset="ufc-8"></script>
-
-  <script src="node_modules/chai/chai.js" charset="ufc-8"></script>
-
-  <script charset="ufc-8" >
-    mocha.setup("bdd")
-  </script>
-
-  <script src="test/shopping_list_test.js" charset="ufc-8"></script>
-
-  <script charset="ufc-8">
-    mocha.run()
-  </script>
+  <script src="js/shopping_list_item.js" charset="ufc-8"></script>
+  <script src="js/shopping_list.js" charset="ufc-8"></script>
+  <script src="js/app.js" charset="ufc-8"></script>
 </body>
 </html>
