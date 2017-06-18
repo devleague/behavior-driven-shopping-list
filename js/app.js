@@ -13,7 +13,7 @@ contentContainer.appendChild(addButton);
 var itemNameBox = document.getElementById("itemName");
 var itemDescriptionBox = document.getElementById("itemDescription");
 
-function add_to_shopping_list_clicked() {
+function add_to_shopping_list() {
   var itemName = itemNameBox.value;
   var itemDescription = itemDescriptionBox.value;
 
@@ -25,18 +25,18 @@ function add_to_shopping_list_clicked() {
   itemDescriptionBox.value = '';
 }
 
-function changeCheckedStatus(idx, checkbox){
-  if(checkbox.checked === true){
-    myList.items[idx].check();
-  } else if(checkbox.checked === false){
-    myList.items[idx].uncheck();
-  }
-}
+// function changeCheckedStatus(idx, checkbox){
+//   if(checkbox.checked === true){
+//     myList.items[idx].check();
+//   } else if(checkbox.checked === false){
+//     myList.items[idx].uncheck();
+//   }
+// }
 
-function removeItemButtonClicked(idx){
-  myList.removeItem(myList.items[idx]);
-  contentContainer.innerHTML = myList.render();
-}
+// function removeItemButtonClicked(idx){
+//   myList.removeItem(myList.items[idx]);
+//   contentContainer.innerHTML = myList.render();
+// }
 
 
 

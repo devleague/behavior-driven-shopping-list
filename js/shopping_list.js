@@ -23,6 +23,12 @@ class ShoppingList {
     }
   }
 
-
+  render() {
+    var newList = '';
+    for(var i = 0; i < this.items.length; i ++){
+      newList += this.items[i];
+    }
+    return `<ul>${newList}</ul>`;
+  }
 
 }

@@ -43,7 +43,7 @@ describe("ShoppingListItem Class", function(){
 
   describe("render method", function(){
     it("should have method render", function(){
-      expect(cake.render()).to.equal(`<li class=completed_${cake.is_done}><span>${cake.name}</span> <span>${cake.description}</span></li>`);
+      expect(cake.render()).to.equal(`<li class="completed_${this.is_done}"><span>${this.name}</span> <span>${this.description}</span></li>`);
     })
   })
 
@@ -101,14 +101,15 @@ describe("ShoppingList Class", function(){
     })
   })
 
+  describe("render method", function(){
+    it("should create a unordered list of the items array", function(){
+      expect(`ul`)
+    })
+  })
+
 
 
 
 })
-
-
-
-
-
 
 })
