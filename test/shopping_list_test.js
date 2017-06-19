@@ -25,7 +25,7 @@ describe("ShoppingListItem Class", function(){
   })
 
   it("should have a property is_done", function(){
-    expect(cake.is_done).to.equal(true);
+    expect(cake.is_done).to.equal(false);
   })
 
   describe("check method", function(){
@@ -43,7 +43,7 @@ describe("ShoppingListItem Class", function(){
 
   describe("render method", function(){
     it("should have method render", function(){
-      expect(cake.render()).to.equal(`<li class="completed_${this.is_done}"><span>${this.name}</span> <span>${this.description}</span></li>`);
+      expect(cake.render()).to.equal(`<li class=completed_${cake.isDone}><span>${cake.name}</span> <span>${cake.description}</span></li>`)
     })
   })
 
