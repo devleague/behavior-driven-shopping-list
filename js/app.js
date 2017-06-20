@@ -24,8 +24,8 @@ function add_to_shopping_list() {
   new_shopping_list_item = new ShoppingListItem(itemName, itemDescription);
   myList.addItem(new_shopping_list_item);
 
-  // itemNameBox.value = '';
-  // itemDescriptionBox.value = '';
+  itemNameBox.value = '';
+  itemDescriptionBox.value = '';
   var li = document.createElement('li');
   li.innerHTML = new_shopping_list_item.render();
   contentContainer.appendChild(li);
