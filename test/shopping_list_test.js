@@ -43,7 +43,9 @@ describe("ShoppingListItem Class", function(){
 
   describe("render method", function(){
     it("should have method render", function(){
-      expect(cake.render()).to.equal(`<li class=completed_${cake.isDone}><span>${cake.name}</span> <span>${cake.description}</span></li>`)
+      expect(cake.render()).to.equal(`<input class="checkBox" type="checkbox" id="${this.id}" ${this.is_done ? "checked" : ""}>\n
+    <span>${cake.name}</span>\n
+    <span>${cake.description}</span>`)
     })
   })
 

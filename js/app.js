@@ -31,18 +31,18 @@ function add_to_shopping_list() {
   contentContainer.appendChild(li);
 }
 
-// function changeCheckedStatus(idx, checkBox){
-//   if(checkBox.checked === true){
-//     myList.items[idx].check();
-//   } else if(checkBox.checked === false){
-//     myList.items[idx].uncheck();
-//   }
-// }
+function changeCheckedStatus(idx, checkBox){
+  if(checkBox.checked === true){
+    myList.items[idx].check();
+  } else if(checkBox.checked === false){
+    myList.items[idx].uncheck();
+  }
+}
 
-// function removeItemButtonClicked(idx){
-//   myList.removeItem(myList.items[idx]);
-//   contentContainer.innerHTML = myList.render();
-// }
+function removeItemButtonClicked(idx){
+  myList.removeItem(myList.items[idx]);
+  contentContainer.innerHTML = myList.render();
+}
 
 
 
