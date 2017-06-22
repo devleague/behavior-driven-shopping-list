@@ -26,22 +26,30 @@ function add_to_shopping_list() {
 
   itemNameBox.value = '';
   itemDescriptionBox.value = '';
+
   var li = document.createElement('li');
   li.innerHTML = new_shopping_list_item.render();
   contentContainer.appendChild(li);
+
+  // change when new choice is made
+  // checkBox = document.querySelectorAll('.checkbox');
+  // for(var i = 0; i < checkBox.length; i++) {
+  //   checkBox[i].addEventListener('change', changeCheckedStatus);
+  // }
 }
 
-function changeCheckedStatus(idx, checkBox){
+function changeCheckedStatus(idx, checkBox) {
   if(checkBox.checked === true){
-    myList.items[idx].check();
+    myList.getItemById[idx].check();
   } else if(checkBox.checked === false){
-    myList.items[idx].uncheck();
+    myList.getItemById[idx].uncheck();
   }
 }
 
-function removeItemButtonClicked(idx){
+function removeItemButtonClicked(idx) {
   myList.removeItem(myList.items[idx]);
   contentContainer.innerHTML = myList.render();
+
 }
 
 

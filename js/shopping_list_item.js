@@ -1,9 +1,11 @@
+var count = 0;
+
 class ShoppingListItem {
-  constructor (name, description, id) {
+  constructor (name, description, idx) {
     this.name = name;
     this.description = description;
-    this.id = id;
     this.is_done = false;
+    this.idx = count++;
   }
 
   check () {
@@ -14,21 +16,9 @@ class ShoppingListItem {
     return this.is_done = false;
   }
 
-  render() {
-    // var checkBox = document.createElement('input');
-    // checkBox.className = "checkBox";
-    // checkBox.type = "checkbox";
-    // listItem.appendChild(checkBox);
+  render(idx) {
 
-    // var nameSpan = document.createElement('span');
-    // nameSpan.innerHTML = `${this.name}`;
-    // listItem.appendChild(nameSpan);
-
-    // var descriptionSpan = document.createElement('span');
-    // descriptionSpan.innerHTML = `${this.description}`;
-    // listItem.appendChild(descriptionSpan);
-
-    return `<input class="checkBox" type="checkbox" id="${this.id}" ${this.is_done ? "checked" : ""}>\n
+    return `<input class="checkBox" type="checkbox" id="${this.idx}" ${this.is_done ? "checked" : ""}>\n
     <span>${this.name}</span>
     <span>${this.description}</span>`;
 

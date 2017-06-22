@@ -109,9 +109,6 @@ describe("ShoppingList Class", function(){
     })
   })
 
-
-
-
 })
 
 })
