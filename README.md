@@ -1,7 +1,7 @@
 # Behavior Driven Shopping List
 
-Fork and clone this project.  
-Goal: Create a working, single page app.  
+Fork and clone this project.
+Goal: Create a working, single page app.
 
 This project has 3 parts.
 
@@ -9,7 +9,7 @@ This project has 3 parts.
 2. Building the Shopping List classes to make tests pass
 3. Rendering a shopping list to the browser
 
-use http-server to test and run your app  
+use http-server to test and run your app
 
 ----
 
@@ -26,7 +26,7 @@ Shopping-List/
     shopping_list_test.js
   tests.html
 ````
-Write tests for the shopping list application.  
+Write tests for the shopping list application.
 The tests should describe the following shopping list functionality:
 
 #### ShoppingListItem
@@ -83,9 +83,9 @@ Before the end of this body tag, include your test library dependencies and your
 
 ## 2. Building the Shopping List classes to make tests pass
 
-Create implementation files.  
-`shopping_list_item.js`  
-`shopping_list.js`  
+Create implementation files.
+`shopping_list_item.js`
+`shopping_list.js`
 
 ````
 Shopping-List/
@@ -105,15 +105,15 @@ Standard html5 document
 Before the end of this body tag, include your 2 shopping list scripts.
 
 
-### shopping_list_item.js  
+### shopping_list_item.js
 
-Create a class that defines `ShoppingListItem`.  
+Create a class that defines `ShoppingListItem`.
 `ShoppingListItem` will have all the properties and methods defined in the BDD spec above.
 
 
-### shopping_list.js  
+### shopping_list.js
 
-Create a class that defines `ShoppingList`.  
+Create a class that defines `ShoppingList`.
 `ShoppingList` will have all the properties and methods defined in the BDD spec above.
 
 
@@ -122,11 +122,11 @@ Once all tests pass, commit and push.
 
 ## 3. Rendering a shopping list to the browser
 
-Create implementation files.  
-`index.html`  
-`shopping_list_item.js`  
-`shopping_list.js`  
-`app.js`  
+Create implementation files.
+`index.html`
+`shopping_list_item.js`
+`shopping_list.js`
+`app.js`
 
 ````
 Shopping-List/
@@ -144,7 +144,7 @@ Shopping-List/
 
 ### index.html
 
-Standard html5 document, include a single empty `div` element with an id of `content`  
+Standard html5 document, include a single empty `div` element with an id of `content`
 before the end of this body tag, include your 3 shopping list scripts.
 
 Create a form that has 2 text fields, `title` and `description`.
@@ -169,19 +169,19 @@ Commit and push your work
 
 ## 4. Check and Uncheck shopping list items
 
-Modify the ShoppingListItem `render()` method to include a `checkbox` input. Add an `onchange` event listener to this checkbox that will call a function named `changeCheckedStatus(idx, checkbox)` where 'idx' is the position (array index) of the ShoppingListItem, and 'checkbox' is the actual checkbox element. [http://www.w3schools.com/jsref/prop_checkbox_checked.asp](http://www.w3schools.com/jsref/prop_checkbox_checked.asp)  
+Modify the ShoppingListItem `render()` method to include a `checkbox` input. Add an `onchange` event listener to this checkbox that will call a function named `changeCheckedStatus(idx, checkbox)` where 'idx' is the position (array index) of the ShoppingListItem, and 'checkbox' is the actual checkbox element. [http://www.w3schools.com/jsref/prop_checkbox_checked.asp](http://www.w3schools.com/jsref/prop_checkbox_checked.asp)
 
 
 ### app.js
 
 #### changeCheckedStatus()
 
-create a `changeCheckedStatus` function that accepts two arguments, idx and checkbox.  
-it will find a ShoppingListItem based on the idx passed in to the function.  
-determine if the checkbox that has been clicked, is now checked or not checked. [http://www.w3schools.com/jsref/event_onchange.asp](http://www.w3schools.com/jsref/event_onchange.asp)  
+create a `changeCheckedStatus` function that accepts two arguments, idx and checkbox.
+it will find a ShoppingListItem based on the idx passed in to the function.
+determine if the checkbox that has been clicked, is now checked or not checked. [http://www.w3schools.com/jsref/event_onchange.asp](http://www.w3schools.com/jsref/event_onchange.asp)
 if the checkbox is checked,
  invoke the shopping_list_item object's `check()` method.
-if the checkbox is not checked,  
+if the checkbox is not checked,
  invoke the shopping_list_item object's `uncheck()` method.
 
 Commit and push your work.
@@ -195,9 +195,9 @@ Modify the ShoppingListItem `render()` method to include a `button` element with
 
 #### removeItemButtonClicked()
 
-Create a `removeItemButtonClicked` function that accepts a single argument, idx.  
-It will find a ShoppingListItem based on the idx passed in to the function.  
-It will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument. Then, re-render the shopping list.  
+Create a `removeItemButtonClicked` function that accepts a single argument, idx.
+It will find a ShoppingListItem based on the idx passed in to the function.
+It will call the shopping_list instance's `removeItem` method, while passing in the found ShoppingListItem object as an argument. Then, re-render the shopping list.
 
 Commit and push your work.
 
