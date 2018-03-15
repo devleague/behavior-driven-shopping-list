@@ -23,18 +23,24 @@ class ShoppingList {
     }
 
     render() {
-        return `<ul>\
-        <span>ShoppingListItem.render();</span>\
+        let concatItems = "";
+        this.items.forEach(function (item) {
+            concatItems += item.render();
+        });
+
+        return `<ul>
+        ${concatItems}
         </ul>`;
     }
 }
 
-let testShoppingList = new ShoppingList();
-let newItem = new ShoppingListItem("pizza", "very yummy cheese thing");
-let secondItem = new ShoppingListItem("cake", "also yummy");
-let thirdItem = new ShoppingListItem("blueberries", "we should eat fruit too");
-testShoppingList.addItem(secondItem);
-testShoppingList.addItem(newItem);
-console.log(testShoppingList);
-testShoppingList.removeItem(secondItem);
-console.log(testShoppingList);
+
+// let testShoppingList = new ShoppingList();
+// let newItem = new ShoppingListItem("pizza", "very yummy cheese thing");
+// let secondItem = new ShoppingListItem("cake", "also yummy");
+// let thirdItem = new ShoppingListItem("blueberries", "we should eat fruit too");
+// testShoppingList.addItem(secondItem);
+// testShoppingList.addItem(newItem);
+// console.log(testShoppingList);
+// testShoppingList.removeItem(secondItem);
+// console.log(testShoppingList);
