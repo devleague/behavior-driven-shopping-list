@@ -160,7 +160,11 @@ Create a form that has 2 text fields, `title` and `description`.
 
 Add a `button` element with the contents of "Add to Shopping List", and give it an id of `addShoppingListItemButton`.
 
-Add a `click` event handler to the `addShoppingListItemButton` that will run a function called `addToShoppingList()`. [http://www.w3schools.com/jsref/event_onclick.asp](http://www.w3schools.com/jsref/event_onclick.asp)
+Use `addEventListener` to add a `click` event handler to the `addShoppingListItemButton` that will run a function called `addToShoppingList(event)`. [http://www.w3schools.com/jsref/event_onclick.asp](http://www.w3schools.com/jsref/event_onclick.asp)
+
+Alternative implementation:
+Add the id `addItemForm` to the input form.
+Use `addEventListener` to add a `submit` event handler to the form.
 
 ### app.js
 
