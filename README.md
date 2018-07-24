@@ -9,7 +9,7 @@ This project has 3 parts.
 2. Building the Shopping List classes to make tests pass
 3. Rendering a shopping list to the browser
 
-use http-server to test and run your app  
+use `http-server` or `live-server` to test and run your app  
 
 ----
 
@@ -17,14 +17,16 @@ use http-server to test and run your app
 
 Setup Mocha and Chai to run tests on your application in the browser.
 
-````
-Shopping-List/
-  node_modules/
-    mocha/
-    chai/
-  js/
-    shopping_list_test.js
-  tests.html
+```bash
+behavior-driven-shopping-list
+├── test
+│   └── shopping-list.test.js
+├── node_modules
+│   ├── chai
+│   └── mocha
+├── test.html
+├── README.md
+└── package.json
 ````
 Write tests for the shopping list application.  
 The tests should describe the following shopping list functionality:
@@ -34,13 +36,13 @@ The tests should describe the following shopping list functionality:
 - ShoppingListItem is a class
 - ShoppingListItem has a property named `name`
 - ShoppingListItem has a property named `description`
-- ShoppingListItem has a property named `is_done`
+- ShoppingListItem has a property named `isDone`
 - ShoppingListItem has a constructor method that accepts 2 arguments, `name` and `description`
   - the constructor method sets the new instances `name` and `description` properties using the arguments passed in
 - ShoppingListItem has a method named `check`
-  -  calling the instance's `check` method will set it's `is_done` property to true
+  -  calling the instance's `check` method will set it's `isDone` property to true
 - ShoppingListItem has a method named `uncheck`
-  -  calling the instance's `uncheck` method will set it's `is_done` property to false
+  -  calling the instance's `uncheck` method will set it's `isDone` property to false
 - ShoppingListItem has a method named `render`
   -  calling the instance's `render` method will construct and return an html formatted string. the string content will be wrapped in `<li>` tags.  `<li class="completed_[is_done]"><span>[name]</span> <span>[description]</span></li>`.   example: `<li class="completed_false"><span>Avocado</span> <span>Must be eaten immediately.</span></li>`
 
@@ -48,16 +50,16 @@ hint: Use ES6 [string templates](http://tc39wiki.calculist.org/es6/template-stri
 
 example:
 
-````
+```js
 
-var some_html_output = '<ul> \
-  <li class="completed_false"> \
-    <span>Avocado</span> \
-    <span>Must be eaten immediately.</span> \
-  </li> \
-<ul>';
+let someHtmlOutput = `<ul>
+  <li class="completed_false">
+    <span>Avocado</span>
+    <span>Must be eaten immediately.</span>
+  </li>
+<ul>`;
 
-````
+```
 
 #### ShoppingList
 
@@ -79,24 +81,28 @@ var some_html_output = '<ul> \
 
 Standard html5 document
 Before the end of this body tag, include your test library dependencies and your test file. You should be able to run your tests with all tests failing, commit and push your work.
+[browser setup.](https://mochajs.org/#running-mocha-in-the-browser)
 
 
 ## 2. Building the Shopping List classes to make tests pass
 
 Create implementation files.  
-`shopping_list_item.js`  
-`shopping_list.js`  
+`shopping-list-item.js`  
+`shopping-list.js`  
 
-````
-Shopping-List/
-  node_modules/
-    mocha/
-    chai/
-  js/
-    shopping_list_item.js
-    shopping_list.js
-    shopping_list_test.js
-  tests.html
+```bash
+behavior-driven-shopping-list
+├── js
+│   ├── shopping-list-item.js
+│   └── shopping-list.js
+├── test
+│   └── shopping-list.test.js
+├── node_modules
+│   ├── chai
+│   └── mocha
+├── test.html
+├── README.md
+└── package.json
 ````
 
 ### index.html
@@ -105,13 +111,13 @@ Standard html5 document
 Before the end of this body tag, include your 2 shopping list scripts.
 
 
-### shopping_list_item.js  
+### shopping-list-item.js  
 
 Create a class that defines `ShoppingListItem`.  
 `ShoppingListItem` will have all the properties and methods defined in the BDD spec above.
 
 
-### shopping_list.js  
+### shopping-list.js  
 
 Create a class that defines `ShoppingList`.  
 `ShoppingList` will have all the properties and methods defined in the BDD spec above.
@@ -124,22 +130,25 @@ Once all tests pass, commit and push.
 
 Create implementation files.  
 `index.html`  
-`shopping_list_item.js`  
-`shopping_list.js`  
+`shopping-list-item.js`  
+`shopping-list.js`  
 `app.js`  
 
-````
-Shopping-List/
-  node_modules/
-    mocha/
-    chai/
-  js/
-    shopping_list_test.js
-    shopping_list_item.js
-    shopping_list.js
-    app.js
-  tests.html
-  index.html
+```bash
+behavior-driven-shopping-list
+├── js
+│   ├── app.js
+│   ├── shopping-list-item.js
+│   └── shopping-list.js
+├── test
+│   └── shopping-list.test.js
+├── node_modules
+│   ├── chai
+│   └── mocha
+├── index.html
+├── test.html
+├── README.md
+└── package.json
 ````
 
 ### index.html
@@ -149,19 +158,19 @@ before the end of this body tag, include your 3 shopping list scripts.
 
 Create a form that has 2 text fields, `title` and `description`.
 
-Add a `button` element with the contents of "Add to Shopping List", and give it an id of `add_shopping_list_item_button`.
+Add a `button` element with the contents of "Add to Shopping List", and give it an id of `addShoppingListItemButton`.
 
-Add a `click` event handler to the `add_shopping_list_item_button` that will run a function called `add_to_shopping_list()`. [http://www.w3schools.com/jsref/event_onclick.asp](http://www.w3schools.com/jsref/event_onclick.asp)
+Add a `click` event handler to the `addShoppingListItemButton` that will run a function called `addToShoppingList()`. [http://www.w3schools.com/jsref/event_onclick.asp](http://www.w3schools.com/jsref/event_onclick.asp)
 
 ### app.js
 
 Create an instance of ShoppingList.
 
-Invoke the shopping_list object's render() method, and store the output to a variable. Write the resulting output html into the `content` div. [http://www.w3schools.com/jsref/prop_html_innerhtml.asp](http://www.w3schools.com/jsref/prop_html_innerhtml.asp)
+Invoke the shoppingList object's render() method, and store the output to a variable. Write the resulting output html into the `content` div. [http://www.w3schools.com/jsref/prop_html_innerhtml.asp](http://www.w3schools.com/jsref/prop_html_innerhtml.asp)
 
-Create an `add_to_shopping_list` function that will read the value of the `title` and `description` fields, then create a new variable named `new_shopping_list_item` that will store the result of constructing a new ShoppingListItem and passing in the values of `title` and `description`.
+Create an `addToShoppingList` function that will read the value of the `title` and `description` fields, then create a new variable named `newShoppingListItem` that will store the result of constructing a new ShoppingListItem and passing in the values of `title` and `description`.
 
-Invoke your shopping list's `addItem` by passing in your `new_shopping_list_item`.
+Invoke your shopping list's `addItem` by passing in your `newShoppingListItem`.
 
 Re-render the shopping list.
 
@@ -180,9 +189,9 @@ create a `changeCheckedStatus` function that accepts two arguments, idx and chec
 it will find a ShoppingListItem based on the idx passed in to the function.  
 determine if the checkbox that has been clicked, is now checked or not checked. [http://www.w3schools.com/jsref/event_onchange.asp](http://www.w3schools.com/jsref/event_onchange.asp)  
 if the checkbox is checked,
- invoke the shopping_list_item object's `check()` method.
+ invoke the shoppingListItem object's `check()` method.
 if the checkbox is not checked,  
- invoke the shopping_list_item object's `uncheck()` method.
+ invoke the shoppingListItem object's `uncheck()` method.
 
 Commit and push your work.
 
