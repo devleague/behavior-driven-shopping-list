@@ -159,18 +159,17 @@ before the end of this body tag, include your 3 shopping list scripts.
 Create a form that has 2 text fields, `title` and `description`.
 
 Add a `button` element with the contents of "Add to Shopping List", and give it an id of `addShoppingListItemButton`.
-
-Use `addEventListener` to add a `click` event handler to the `addShoppingListItemButton` that will run a function called `addToShoppingList(event)`. [http://www.w3schools.com/jsref/event_onclick.asp](http://www.w3schools.com/jsref/event_onclick.asp)
-
-Alternative implementation:
 Add the id `addItemForm` to the input form.
-Use `addEventListener` to add a `submit` event handler to the form.
 
 ### app.js
 
 Create an instance of ShoppingList.
 
+Use `addEventListener` to add a `click` event handler to the `addShoppingListItemButton` that will run a function called `addToShoppingList(event)`. [http://www.w3schools.com/jsref/event_onclick.asp](http://www.w3schools.com/jsref/event_onclick.asp) or alternatively use `addEventListener` to add a submit event handler to the form.
+
 Invoke the shoppingList object's render() method, and store the output to a variable. Write the resulting output html into the `content` div. [http://www.w3schools.com/jsref/prop_html_innerhtml.asp](http://www.w3schools.com/jsref/prop_html_innerhtml.asp)
+
+// add item instructions
 
 Create an `addToShoppingList` function that will read the value of the `title` and `description` fields, then create a new variable named `newShoppingListItem` that will store the result of constructing a new ShoppingListItem and passing in the values of `title` and `description`.
 
