@@ -36,6 +36,13 @@ describe('ShoppingListItem', function () {
     })
   })
 
+  it('should have a method named "check"', function() {
+    newItem.check.should.be.a('function'); // expect(item).to.respondTo('check')
+    newItem.check();
+    newItem.is_done.should.equal(true);
+  });
+
+
 })
 
 
