@@ -18,4 +18,10 @@ describe('ShoppingListItem', function () {
     expect(newItem.name).to.be.a('string');
     expect(newItem.name.length).to.be.gt(1);
   })
+  it('should have property "description"', function () {
+    expect(newItem).to.have.property('description');
+    expect(newItem.description).to.be.a('string');
+    expect(newItem.description.length).to.be.gt(1);
+  })
+
 })
