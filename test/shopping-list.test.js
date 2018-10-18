@@ -36,13 +36,17 @@ describe('ShoppingListItem', function () {
     })
   })
 
-  it('should have a method named "check"', function() {
+  it('should have a method named "check"', function () {
     newItem.check.should.be.a('function'); // expect(item).to.respondTo('check')
     newItem.check();
     newItem.is_done.should.equal(true);
   });
 
+  it('should have a method named "uncheck"', function () {
+    newItem.check.should.be.a('function'); // expect(item).to.respondTo('check')
+    newItem.uncheck();
+    newItem.is_done.should.equal(false);
 
-})
+  })
 
-
+});
