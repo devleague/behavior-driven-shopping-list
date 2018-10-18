@@ -83,9 +83,21 @@ describe('ShoppingList', function () {
 
   it('should be instance of shopping list item', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
-    //newList.addItem();
-    expect(() => newList.addItem()).to.throw();
+    //uncomment below when trying to write the passing code
+    // (() => newList.addItem()).to.throw("error");
+
   });
+
+  it('should have method to remove item', function (){
+    expect(newList).to.be.instanceOf(ShoppingList);
+    
+    //  (() => newList.addItem()).to.throw("error");
+  });
+
+  it('should remove last item if no parameters are present', 
+  function () {
+  
+  })
   //expect(shoppingListItems).to.be.(shoppingListItems);
   //console.log(shoppingListItems);
   //expect(items).to.include(shoppingListItems);
