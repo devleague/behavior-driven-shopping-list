@@ -64,6 +64,7 @@ describe('ShoppingListItem', function () {
 describe('ShoppingList', function () {
   let items;
   let newList;
+  let shoppingListItems;
 
   before(function () {
     newList = new ShoppingList();
@@ -75,5 +76,10 @@ describe('ShoppingList', function () {
   it('should be an empty array', function(){
     expect(items).to.deep.equal([]);
   })
+
+    it('should have method addItem', function () {
+      expect(newList).to.have.property('addItem');
+      expect(newList.shoppingListItems).to.include(items);
+    })
 
 });
