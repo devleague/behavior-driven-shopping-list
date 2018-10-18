@@ -10,7 +10,6 @@ describe('ShoppingListItem', function () {
   })
   it('should be a class', function () {
     expect(newItem).to.be.instanceOf(ShoppingListItem);
-    console.log(newItem.name)
   });
 
   it('should have property "name"', function () {
@@ -29,4 +28,14 @@ describe('ShoppingListItem', function () {
     expect(newItem.is_done).to.be.a('boolean');
   })
 
+  describe("methods", function () {
+
+    it('should pass two arguments', function () {
+      expect(newItem.name).to.equal('drugs');
+      expect(newItem.description).to.equal('meth');
+    })
+  })
+
 })
+
+
