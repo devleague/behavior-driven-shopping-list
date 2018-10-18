@@ -49,7 +49,7 @@ describe('ShoppingListItem', function () {
 
   })
 
- 
+
   describe('render', function () {
     it('should have render method', function () {
       expect(newItem).to.have.property('render');
@@ -57,5 +57,20 @@ describe('ShoppingListItem', function () {
       expect(newItem.render()).to.be.a('string');
     })
   })
+
+});
+
+
+describe('ShoppingList', function () {
+  let items;
+  let newList;
+
+  before(function () {
+    newList = new ShoppingList();
+    items = [];
+  })
+  it('should be a class', function () {
+    expect(newList).to.be.instanceOf(ShoppingList);
+  });
 
 });
