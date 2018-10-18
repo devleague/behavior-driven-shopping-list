@@ -10,4 +10,8 @@ class ShoppingListItem {
   uncheck() {
     this.is_done = false;
   }
+  render() {
+    return `<li class= ${is_done}>
+    <span>${name}</span> <span>${description}</span></li>`
+  }
 }

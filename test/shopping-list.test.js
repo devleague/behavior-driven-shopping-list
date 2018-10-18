@@ -49,4 +49,11 @@ describe('ShoppingListItem', function () {
 
   })
 
+  it('should have a method named "render" that constructs HTML tags with <li> tags', function (){
+    newItem.render.should.be.a('function');
+    newItem.render()
+    newItem.render.should.equal(`<li class= ${is_done}>
+    <span>${name}</span> <span>${description}</span></li>`)//`<li class= ${'completed_false'}><span>${'name'}</span> <span>${'description'}</span></li>`);
+  })
+
 });
