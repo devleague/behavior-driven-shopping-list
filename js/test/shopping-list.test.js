@@ -64,7 +64,7 @@ describe('ShoppingListItem', function () {
 describe('ShoppingList', function () {
   let items;
   let newList;
-  let shoppingListItems;
+  let shoppingListItems = 'banana';
 
   before(function () {
     newList = new ShoppingList();
@@ -73,13 +73,22 @@ describe('ShoppingList', function () {
   it('should be a class', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
   });
-  it('should be an empty array', function(){
+  it('should be an empty array', function () {
     expect(items).to.deep.equal([]);
-  })
+  });
 
-    it('should have method addItem', function () {
-      expect(newList).to.have.property('addItem');
-      expect(newList.shoppingListItems).to.include(items);
-    })
+  it('should have method addItem', function () {
+    expect(newList).to.respondTo('addItem');
+  });
+
+  it('should be instance of shopping list item', function () {
+    expect(newList).to.be.instanceOf(ShoppingList);
+    //newList.addItem();
+    expect(() => newList.addItem()).to.throw();
+  });
+  //expect(shoppingListItems).to.be.(shoppingListItems);
+  //console.log(shoppingListItems);
+  //expect(items).to.include(shoppingListItems);
+
 
 });

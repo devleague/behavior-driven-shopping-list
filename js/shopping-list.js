@@ -3,8 +3,8 @@ class ShoppingList {
     this.items = [];
   }
 
-  addItem(){
-    items.push(ShoppingListItems);
+  addItem(obj){
+    this.items.push(obj);
   }
 
 }
