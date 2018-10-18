@@ -24,4 +24,9 @@ describe('ShoppingListItem', function () {
     expect(newItem.description.length).to.be.gt(1);
   })
 
+  it('should have property "is_done"', function () {
+    expect(newItem).to.have.property('is_done');
+    expect(newItem.is_done).to.be.a('boolean');
+  })
+
 })
