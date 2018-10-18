@@ -72,5 +72,8 @@ describe('ShoppingList', function () {
   it('should be a class', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
   });
+  it('should be an empty array', function(){
+    expect(items).to.deep.equal([]);
+  })
 
 });
