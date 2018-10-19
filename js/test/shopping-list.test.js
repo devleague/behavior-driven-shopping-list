@@ -98,12 +98,4 @@ describe('ShoppingList', function () {
     // (() => newList.addItem()).to.throw("error");
   })
 
-  describe('render', function () {
-    it('should have render method', function () {
-      expect(ShoppingList).to.have.property('render');
-      ShoppingList.render();
-      expect(ShoppingList.render()).to.be.a('string');
-    })
-  })
-
 });
