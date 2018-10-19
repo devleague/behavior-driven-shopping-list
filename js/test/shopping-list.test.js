@@ -88,14 +88,29 @@ describe('ShoppingList', function () {
 
   });
 
-  it('should have method to remove item', function (){
+  it('should have method to remove item', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
 
   });
 
-  it('should remove last item if no parameters are present', 
-  function () {
-    // (() => newList.addItem()).to.throw("error");
+  it('should remove last item if no parameters are present',
+    function () {
+      // (() => newList.addItem()).to.throw("error");
+    })
+
+<<<<<<< HEAD
+=======
+  describe('render', function () {
+    it('should have render method', function () {
+      expect(newList.render).to.be.a('function');
+      // ShoppingList.render();
+      //expect(ShoppingList.render()).to.be.a('string');
+    });
+    it('should return a <ul> list of rendered items', function () {
+      expect(newList.render())
+      expect(newList.render()).to.be.a('string');
+    });
   })
 
+>>>>>>> 8d447bfbfbb3063ce5197d6e0497ad24bf25a821
 });
