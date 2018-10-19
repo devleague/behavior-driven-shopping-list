@@ -105,7 +105,8 @@ describe('ShoppingList', function () {
       //expect(ShoppingList.render()).to.be.a('string');
     });
     it('should return a <ul> list of rendered items', function () {
-
+      expect(newList.render())
+      expect(newList.render()).to.be.a('string');
     });
   })
 
