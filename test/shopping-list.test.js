@@ -223,9 +223,9 @@ describe('ShoppingList', () => {
       groceries.addItem(salad);
       let str = groceries.render();
 
-      expect(str).to.equal(`<ul><li class="completed_false"><span>Campbell's</span> <span>Tomato Soup</span></li><li class="completed_false"><span>Lays</span> <span>Salt & Vinegar</span></li><li class="completed_false"><span>Fresh Greens</span> <span>Caesar</span></li></ul>`);
+      expect(str).to.equal(
+        `<ul><li class="completed_false"><span>Campbells</span> <span>Tomato Soup</span></li><li class="completed_false"><span>Lays</span> <span>Salt & Vinegar</span></li><li class="completed_false"><span>Fresh Greens</span> <span>Caesar</span></li></ul>`
+      );
     });
-
-
   });
 });
