@@ -54,7 +54,7 @@ describe('ShoppingListItem', () => {
     });
 
     it('should be a boolean', () => {
-      expect(typeof soup.isDone === "boolean").to.be.true;
+      expect(typeof soup.isDone === 'boolean').to.be.true;
     });
   });
 
@@ -128,5 +128,17 @@ describe('ShoppingList', () => {
 
   it('should be an instance of ShoppingList class', () => {
     expect(groceries instanceof ShoppingList).to.be.true;
+  });
+
+  describe('Items', () => {
+    let groceries = new ShoppingList();
+
+    it('should have a Item property', () => {
+      expect(groceries).to.have.own.property('items');
+    });
+
+    it('should be an array', () => {
+      expect(Array.isArray(groceries.items)).to.be.true;
+    });
   });
 });
