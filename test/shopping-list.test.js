@@ -133,12 +133,35 @@ describe('ShoppingList', () => {
   describe('Items', () => {
     let groceries = new ShoppingList();
 
-    it('should have a Item property', () => {
+    it('should have an items property', () => {
       expect(groceries).to.have.own.property('items');
     });
 
     it('should be an array', () => {
       expect(Array.isArray(groceries.items)).to.be.true;
+    });
+
+    it('should have a constructor method that initializes items as an empty Array', () => {
+      expect(groceries.items).to.deep.equal([]);
+    });
+  });
+
+  describe('addItem method', () => {
+
+    it('should have a method named addItem that accepts a single ShoppingListItem argument', () => {
+      let groceries = new ShoppingList();
+      groceries.addItem("soup");
+
+      expect(groceries.addItem).to.be.a('function');
+      expect(groceries.items).to.deep.equal(['soup']);
+    });
+
+    it('should throw an error if anything other than a ShoppingListItem is passed to the method', () => {
+      let groceries = new ShoppingList();
+      let faultyParameter = groceries.addItem(true);
+
+      expect(groceries.items).to.deep.equal([]);
+      expect(faultyParameter).to.be.an('error');
     });
   });
 });
