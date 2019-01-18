@@ -17,18 +17,37 @@ describe('ShoppingListItem', () => {
     expect(ShoppingItem instanceof ShoppingListItem).to.be.true;
   });
 
-  it('should have a name property', () => {
+  describe('Item Name', () => {
     let soup = new ShoppingListItem('name');
-    expect(soup.name).to.equal('name');
+
+    it('should have a name property', () => {
+      expect(soup.name).to.equal('name');
+    });
+
+    it('should be a string', () => {
+      expect(typeof soup.name === 'string').to.be.true;
+    });
   });
 
-  it('should have a description property', () => {
+  describe('Item Description', () => {
     let soup = new ShoppingListItem("Cambell's", 'Tomato Soup');
-    expect(soup.description).to.equal('Tomato Soup');
+
+    it('should have a description property', () => {
+      expect(soup.description).to.equal('Tomato Soup');
+    });
+
+    it('should be a string', () => {
+      expect(typeof soup.description === 'string').to.be.true;
+    });
   });
 
   it('should have a isDone property', () => {
     let soup = new ShoppingListItem("Cambell's", 'Tomato Soup');
-    soup.isDone.should.equal(false);
+    expect(soup.isDone).to.equal(false);
+  });
+
+  it('should have a constructor method that accepts 2 arguments, name & description', () => {
+    let soup = new ShoppingListItem("Campbell's", "Tomato Soup");
+    expect(soup.name === "Campbell's" && soup.description === "Tomato Soup").to.be.true;
   });
 });
