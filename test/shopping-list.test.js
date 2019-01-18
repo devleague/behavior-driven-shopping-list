@@ -170,20 +170,23 @@ describe('ShoppingList', () => {
     it(' should have a method named removeItem that accepts a single ShoppingListItem arguement', () => {
       expect(groceries.removeItem).to.be.a('function');
     });
+
     it('should remove an item from ShoppingListItem', () => {
       let soup = new ShoppingListItem('campbells', 'chicken noodle');
       let groceries = new ShoppingList();
       groceries.addItem(soup);
       groceries.removeItem(soup);
-      expect(groceries).to.deep.equal([]);
+      expect(groceries.items).to.deep.equal([]);
     });
+
     it('should remove the last item in the items list, if there are any items, else it does nothing when removeItems is invoked', () => {
       let soup = new ShoppingListItem('campbells', 'chicken noodle');
       let groceries = new ShoppingList();
       groceries.addItem(soup);
       groceries.removeItem();
-      expect(groceries).to.deep.equal([]);
+      expect(groceries.items).to.deep.equal([]);
     });
+
     it('should only remove the last item in the array when removeItem is invoked without a parameter', () => {
       let soup = new ShoppingListItem('campbells', 'chicken noodle');
       let chips = new ShoppingListItem('campbells', 'chicken noodle');
@@ -191,8 +194,9 @@ describe('ShoppingList', () => {
       groceries.addItem(soup);
       groceries.addItem(chips);
       groceries.removeItem();
-      expect(groceries).to.deep.equal([soup]);
+      expect(groceries.items).to.deep.equal([soup]);
     });
+
     it('should throw an error if anything other than a ShoppingListItem is passed to the method', () => {
       let groceries = new ShoppingList();
 
@@ -200,5 +204,28 @@ describe('ShoppingList', () => {
         'that item is not on your list'
       );
     });
+  });
+
+  describe('render method', () => {
+    let groceries = new ShoppingList();
+    let soup = new ShoppingListItem('Campbells', 'Tomato Soup');
+    let chips = new ShoppingListItem('Lays', 'Salt & Vinegar');
+    let salad = new ShoppingListItem('Fresh Greens', 'Caesar');
+
+    it('should be a function', () => {
+      expect(groceries.render).to.exist;
+      expect(groceries.render).to.be.a('function');
+    });
+
+    it('should return an HTML formatted string containing the result of calling the render method on each item in the items array', () => {
+      groceries.addItem(soup);
+      groceries.addItem(chips);
+      groceries.addItem(salad);
+      let str = groceries.render();
+
+      expect(str).to.equal(`<ul><li class="completed_false"><span>Campbell's</span> <span>Tomato Soup</span></li><li class="completed_false"><span>Lays</span> <span>Salt & Vinegar</span></li><li class="completed_false"><span>Fresh Greens</span> <span>Caesar</span></li></ul>`);
+    });
+
+
   });
 });
