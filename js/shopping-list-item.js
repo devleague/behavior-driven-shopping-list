@@ -1,3 +1,5 @@
+"use strict";
+
 class ShoppingListItem {
   constructor(name, description) {
     this.name = name;
@@ -12,6 +14,11 @@ class ShoppingListItem {
   uncheck() {
     return (this.isDone = false);
   }
+
+  render() {
+    return `<li class="copleted_${this.isDone}"><span>${this.name}</span> <span>${this.description}</span></li>`;
+  }
+
 }
 
 module.exports = { ShoppingListItem };

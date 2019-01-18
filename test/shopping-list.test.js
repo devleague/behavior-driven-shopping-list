@@ -5,6 +5,7 @@ const item = require('../js/shopping-list-item.js');
 const list = require('../js/shopping-list.js');
 
 let ShoppingListItem = item.ShoppingListItem;
+let ShoppingList = list.ShoppingList;
 
 describe('ShoppingListItem', () => {
   const ShoppingItem = new ShoppingListItem();
@@ -41,9 +42,20 @@ describe('ShoppingListItem', () => {
     });
   });
 
-  it('should have a isDone property', () => {
+  describe('isDone property', () => {
     let soup = new ShoppingListItem("Cambell's", 'Tomato Soup');
-    expect(soup.isDone).to.equal(false);
+
+    it('should be a property of ShoppingListItem class', () => {
+      expect(soup).to.have.own.property('isDone');
+    });
+
+    it('should be set to false by default', () => {
+      expect(soup.isDone).to.equal(false);
+    });
+
+    it('should be a boolean', () => {
+      expect(typeof soup.isDone === "boolean").to.be.true;
+    });
   });
 
   it('should have a constructor method that accepts 2 arguments, name & description', () => {
@@ -53,16 +65,34 @@ describe('ShoppingListItem', () => {
   });
 
   describe('item check method', () => {
+    let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
+
+    it('should be a method on the ShoppingListItem class', () => {
+      expect(soup.check).to.exist;
+    });
+
+    it('should be a function', () => {
+      expect(soup.check).to.be.a('function');
+    });
+
     it('should set the isDone property to true when calling the insances check method', () => {
-      let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
       soup.check();
       expect(soup.isDone).to.be.true;
     });
   });
 
   describe('item uncheck method', () => {
+    let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
+
+    it('should be a method on the ShoppingListItem class', () => {
+      expect(soup.uncheck).to.exist;
+    });
+
+    it('should be a function', () => {
+      expect(soup.uncheck).to.be.a('function');
+    });
+
     it('should set the isDone property to false when calling the insances uncheck method', () => {
-      let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
       soup.check();
       soup.uncheck();
       expect(soup.isDone).to.be.false;
@@ -71,17 +101,32 @@ describe('ShoppingListItem', () => {
 
   describe('Render method', () => {
     let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
+    let rendered = soup.render();
+
     it('should return an html formatted string', () => {
-      let rendered = soup.render;
       expect(typeof rendered === 'string').to.be.true;
     });
+
     it('should be a function', () => {
       expect(soup.render).to.be.a('function');
     });
+
     it('string content should be wrapped in <li> tags', () => {
       let beginningTag = rendered.slice(0, 3);
       let endTag = rendered.slice(rendered.length - 3);
       expect(`${beginningTag}${endTag}`).to.equal('<lili>');
     });
+  });
+});
+
+describe('ShoppingList', () => {
+  const groceries = new ShoppingList();
+
+  it('should be a function', () => {
+    expect(ShoppingList).to.be.a('function');
+  });
+
+  it('should be an instance of ShoppingList class', () => {
+    expect(groceries instanceof ShoppingList).to.be.true;
   });
 });
