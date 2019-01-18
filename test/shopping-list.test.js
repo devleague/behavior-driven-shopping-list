@@ -52,11 +52,20 @@ describe('ShoppingListItem', () => {
       .be.true;
   });
 
-  describe('item Check Method', () => {
+  describe('item check method', () => {
     it('should set the isDone property to true when calling the insances check method', () => {
       let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
       soup.check();
       expect(soup.isDone).to.be.true;
+    });
+  });
+
+  describe('item uncheck method', () => {
+    it('should set the isDone property to false when calling the insances uncheck method', () => {
+      let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
+      soup.check();
+      soup.uncheck();
+      expect(soup.isDone).to.be.false;
     });
   });
 });
