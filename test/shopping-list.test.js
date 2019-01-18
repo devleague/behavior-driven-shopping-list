@@ -68,4 +68,20 @@ describe('ShoppingListItem', () => {
       expect(soup.isDone).to.be.false;
     });
   });
+
+  describe('Render method', () => {
+    let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
+    it('should return an html formatted string', () => {
+      let rendered = soup.render;
+      expect(typeof rendered === 'string').to.be.true;
+    });
+    it('should be a function', () => {
+      expect(soup.render).to.be.a('function');
+    });
+    it('string content should be wrapped in <li> tags', () => {
+      let beginningTag = rendered.slice(0, 3);
+      let endTag = rendered.slice(rendered.length - 3);
+      expect(`${beginningTag}${endTag}`).to.equal('<lili>');
+    });
+  });
 });
