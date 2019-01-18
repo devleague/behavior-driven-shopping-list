@@ -6,8 +6,12 @@ class ShoppingListItem {
   }
 
   check() {
-    return this.isDone = true;
-  };
+    return (this.isDone = true);
+  }
+
+  uncheck() {
+    return (this.isDone = false);
+  }
 }
 
 module.exports = { ShoppingListItem };
