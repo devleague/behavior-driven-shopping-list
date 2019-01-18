@@ -10,8 +10,7 @@ class ShoppingList {
   }
   addItem(item) {
     if (!(item instanceof ShoppingListItem)) {
-      return false;
-      // throw new Error('invalid item');
+      throw new Error('invalid item');
     }
     this.items.push(item);
   }

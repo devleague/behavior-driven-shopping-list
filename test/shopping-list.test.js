@@ -158,10 +158,47 @@ describe('ShoppingList', () => {
 
     it('should throw an error if anything other than a ShoppingListItem is passed to the method', () => {
       let groceries = new ShoppingList();
-      // let faultyParameter = groceries.addItem(true);
 
       expect(groceries.items).to.deep.equal([]);
-      // expect(faultyParameter).to.be.an('error');
+      expect(groceries.addItem.bind('groceries', 'cake')).to.throw(
+        'invalid item'
+      );
+    });
+  });
+
+  describe('removeItem method', () => {
+    it(' should have a method named removeItem that accepts a single ShoppingListItem arguement', () => {
+      expect(groceries.removeItem).to.be.a('function');
+    });
+    it('should remove an item from ShoppingListItem', () => {
+      let soup = new ShoppingListItem('campbells', 'chicken noodle');
+      let groceries = new ShoppingList();
+      groceries.addItem(soup);
+      groceries.removeItem(soup);
+      expect(groceries).to.deep.equal([]);
+    });
+    it('should remove the last item in the items list, if there are any items, else it does nothing when removeItems is invoked', () => {
+      let soup = new ShoppingListItem('campbells', 'chicken noodle');
+      let groceries = new ShoppingList();
+      groceries.addItem(soup);
+      groceries.removeItem();
+      expect(groceries).to.deep.equal([]);
+    });
+    it('should only remove the last item in the array when removeItem is invoked without a parameter', () => {
+      let soup = new ShoppingListItem('campbells', 'chicken noodle');
+      let chips = new ShoppingListItem('campbells', 'chicken noodle');
+      let groceries = new ShoppingList();
+      groceries.addItem(soup);
+      groceries.addItem(chips);
+      groceries.removeItem();
+      expect(groceries).to.deep.equal([soup]);
+    });
+    it('should throw an error if anything other than a ShoppingListItem is passed to the method', () => {
+      let groceries = new ShoppingList();
+
+      expect(groceries.removeItem.bind('groceries', 'cupcakes')).to.throw(
+        'that item is not on your list'
+      );
     });
   });
 });
