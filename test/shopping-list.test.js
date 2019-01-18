@@ -147,21 +147,21 @@ describe('ShoppingList', () => {
   });
 
   describe('addItem method', () => {
-
     it('should have a method named addItem that accepts a single ShoppingListItem argument', () => {
+      let soup = new ShoppingListItem('campell', 'chicken noodle');
       let groceries = new ShoppingList();
-      groceries.addItem("soup");
+      groceries.addItem(soup);
 
       expect(groceries.addItem).to.be.a('function');
-      expect(groceries.items).to.deep.equal(['soup']);
+      expect(groceries.items).to.deep.equal([soup]);
     });
 
     it('should throw an error if anything other than a ShoppingListItem is passed to the method', () => {
       let groceries = new ShoppingList();
-      let faultyParameter = groceries.addItem(true);
+      // let faultyParameter = groceries.addItem(true);
 
       expect(groceries.items).to.deep.equal([]);
-      expect(faultyParameter).to.be.an('error');
+      // expect(faultyParameter).to.be.an('error');
     });
   });
 });
