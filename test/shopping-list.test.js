@@ -21,4 +21,9 @@ describe('ShoppingListItem', () => {
     let soup = new ShoppingListItem('name');
     expect(soup.name).to.equal('name');
   });
+
+  it('should have a description', () => {
+    let soup = new ShoppingListItem("Cambell's", "Tomato Soup");
+    expect(soup.description).to.equal('Tomato Soup');
+  });
 });
