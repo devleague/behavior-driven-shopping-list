@@ -17,13 +17,18 @@ describe('ShoppingListItem', () => {
     expect(ShoppingItem instanceof ShoppingListItem).to.be.true;
   });
 
-  it('should have a name', () => {
+  it('should have a name property', () => {
     let soup = new ShoppingListItem('name');
     expect(soup.name).to.equal('name');
   });
 
-  it('should have a description', () => {
-    let soup = new ShoppingListItem("Cambell's", "Tomato Soup");
+  it('should have a description property', () => {
+    let soup = new ShoppingListItem("Cambell's", 'Tomato Soup');
     expect(soup.description).to.equal('Tomato Soup');
+  });
+
+  it('should have a isDone property', () => {
+    let soup = new ShoppingListItem("Cambell's", 'Tomato Soup');
+    soup.isDone.should.equal(false);
   });
 });
