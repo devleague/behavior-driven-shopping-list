@@ -47,7 +47,16 @@ describe('ShoppingListItem', () => {
   });
 
   it('should have a constructor method that accepts 2 arguments, name & description', () => {
-    let soup = new ShoppingListItem("Campbell's", "Tomato Soup");
-    expect(soup.name === "Campbell's" && soup.description === "Tomato Soup").to.be.true;
+    let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
+    expect(soup.name === "Campbell's" && soup.description === 'Tomato Soup').to
+      .be.true;
+  });
+
+  describe('item Check Method', () => {
+    it('should set the isDone property to true when calling the insances check method', () => {
+      let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
+      soup.check();
+      expect(soup.isDone).to.be.true;
+    });
   });
 });
