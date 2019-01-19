@@ -1,9 +1,5 @@
 'use strict';
 
-const listItem = require('./shopping-list-item.js');
-
-let ShoppingListItem = listItem.ShoppingListItem;
-
 class ShoppingList {
   constructor() {
     this.items = [];
@@ -30,11 +26,11 @@ class ShoppingList {
   render() {
     let unorderedList = '<ul>';
     for (let i = 0; i < this.items.length; i++) {
-      let rendered = this.items[i].render();
+      let rendered = this.items[i].render(i);
       unorderedList += rendered;
     }
     return unorderedList + '</ul>';
   }
 }
 
-module.exports = { ShoppingList };
+// module.exports = { ShoppingList };

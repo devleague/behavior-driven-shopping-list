@@ -15,10 +15,14 @@ class ShoppingListItem {
     return (this.isDone = false);
   }
 
-  render() {
-    return `<li class="completed_${this.isDone}"><span>${this.name}</span> <span>${this.description}</span></li>`;
+  render(idx) {
+    if (this.isDone === true) {
+      return `<li class="completed_${this.isDone}"><input type="checkbox" onchange="changeCheckedStatus(${idx}, this)" checked/><span>${this.name}</span> <span>${this.description}</span></li>`;
+    } else {
+      return `<li class="completed_${this.isDone}"><input type="checkbox" onchange="changeCheckedStatus(${idx}, this)"><span>${this.name}</span> <span>${this.description}</span></li>`;
+    }
   }
 
 }
 
-module.exports = { ShoppingListItem };
+// module.exports = { ShoppingListItem };
