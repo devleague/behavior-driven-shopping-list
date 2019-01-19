@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const content = document.querySelector('#content');
 const addButton = document.querySelector('#addShoppingListItemButton');
@@ -23,15 +23,16 @@ function changeCheckedStatus(idx, checkbox) {
     shoppingList.items[idx].uncheck();
   }
   content.innerHTML = shoppingList.render();
-};
+}
 
 /*******************
 EVENT LISTENERS
 ******************/
 
-addButton.addEventListener('click', (event) => {
+addButton.addEventListener('click', event => {
   event.preventDefault();
   addToShoppingList();
   let renderedList = shoppingList.render();
   content.innerHTML = renderedList;
 });
+//doesn't matter
